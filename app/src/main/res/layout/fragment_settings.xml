@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsFragment">
+
+    <TextView
+        android:id="@+id/numberOfTrainingsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ilość treningów w tygodniu"/>
+
+
+    <EditText
+        android:id="@+id/numberOfTrainings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="3"
+        android:layout_below="@+id/numberOfTrainingsText"/>
+
+    <Button
+        android:id="@+id/numberOfTrainingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/numberOfTrainings"
+        android:text="Ustaw" />
+
+
+</RelativeLayout>
