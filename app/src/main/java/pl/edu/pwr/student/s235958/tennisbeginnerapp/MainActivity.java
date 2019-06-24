@@ -1,11 +1,8 @@
 package pl.edu.pwr.student.s235958.tennisbeginnerapp;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,19 +11,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Fragment fragment = null;
 
-    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //settings = new Settings();
+        TrainingPlanFragment trainingPlanFragment = new TrainingPlanFragment();
+
+        showHome();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -38,14 +38,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        showHome();
-
-        TrainingPlanFragment trainingPlanFragment = new TrainingPlanFragment();
-
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("user_obj", user);
-        trainingPlanFragment.setArguments(bundle);
 
 
     }
@@ -67,7 +59,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+//        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -76,14 +68,14 @@ public class MainActivity extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            fragment = new SettingsFragment();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.main_layout, fragment, fragment.getTag()).commit();
-        }
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            fragment = new SettingsFragment();
+//            FragmentManager manager = getSupportFragmentManager();
+//            manager.beginTransaction().replace(R.id.main_layout, fragment, fragment.getTag()).commit();
+//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -96,9 +88,9 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_training_plan) {
             fragment = new TrainingPlanFragment();
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("user_obj", user);
-            fragment.setArguments(bundle);
+//            Bundle bundle = new Bundle();
+//            bundle.putSerializable("user_obj", settings);
+//            fragment.setArguments(bundle);
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.main_layout, fragment, fragment.getTag()).commit();
 
@@ -118,9 +110,9 @@ public class MainActivity extends AppCompatActivity
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.main_layout, fragment, fragment.getTag()).commit();
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("user_obj", user);
-            fragment.setArguments(bundle);
+//            Bundle bundle = new Bundle();
+//            bundle.putSerializable("user_obj", settings);
+//            fragment.setArguments(bundle);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

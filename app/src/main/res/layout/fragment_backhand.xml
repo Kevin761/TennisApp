@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DodgerBlue"
+    android:background="#fff"
     tools:context=".BackhandFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/backhandTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="220dp"
+        android:text="BACKHAND"
+        android:textColor="#000"
+        android:textSize="30dp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/backhandDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/backhandTitle"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Jest to uderzenie piłki w poprzek ciała zewnętrzną stroną rakiety, gdzie w początkowej fazie wyprowadzania uderzenia prawa ręka (u leworęcznych lewa ręka), w której gracz trzyma rakietę poprowadzona jest w wszerz ciała i rakieta znajduje się po jego lewej stronie (u leworęcznych po prawej). Podczas uderzenia gracz wykonuje wymach odrzucając rękę razem z rakietą od klatki piersiowej. Po wykonaniu uderzenia ręka wraca na swoją właściwą stronę. Bekhend może być jedno lub oburęczny w zależności od tego, czy gracz wykonując to uderzenie trzyma rakietę jedną czy dwoma rękami." />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
